@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 using UnityEngine.InputSystem;
 #endif
@@ -88,6 +88,8 @@ namespace StarterAssets
 		private CharacterController _controller;
 		private StarterAssetsInputs _input;
 		private GameObject _mainCamera;
+
+		private bool _rotateOnMove = true;
 
 		private const float _threshold = 0.01f;
 
@@ -212,7 +214,9 @@ namespace StarterAssets
 				float rotation = Mathf.SmoothDampAngle(transform.eulerAngles.y, _targetRotation, ref _rotationVelocity, RotationSmoothTime);
 
 				// rotate to face input direction relative to camera position
+				if(_rotateOnMove){
 				transform.rotation = Quaternion.Euler(0.0f, rotation, 0.0f);
+				}
 			}
 
 
@@ -316,5 +320,6 @@ namespace StarterAssets
 			// when selected, draw a gizmo in the position of, and matching radius of, the grounded collider
 			Gizmos.DrawSphere(new Vector3(transform.position.x, transform.position.y - GroundedOffset, transform.position.z), GroundedRadius);
 		}
-	}
+        public void SetRotateOnMove(bool newRotateOnMove) => _rotateOnMove = newRotateOnMove;
+    }
 }
