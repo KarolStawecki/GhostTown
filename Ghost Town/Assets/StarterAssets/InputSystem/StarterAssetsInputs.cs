@@ -12,19 +12,13 @@ namespace StarterAssets
 		public Vector2 look;
 		public bool jump;
 		public bool sprint;
-		
-		public bool aim;
-
-		public bool shoot;
 
 		[Header("Movement Settings")]
 		public bool analogMovement;
 
-#if !UNITY_IOS || !UNITY_ANDROID
 		[Header("Mouse Cursor Settings")]
 		public bool cursorLocked = true;
 		public bool cursorInputForLook = true;
-#endif
 
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 		public void OnMove(InputValue value)
@@ -45,22 +39,10 @@ namespace StarterAssets
 			JumpInput(value.isPressed);
 		}
 
-		public void OnShoot(InputValue value)
-		{
-			ShootInput(value.isPressed);
-		}
-
 		public void OnSprint(InputValue value)
 		{
 			SprintInput(value.isPressed);
 		}
-
-		public void OnAim(InputValue value)
-		{
-			AimInput(value.isPressed);
-		}
-#else
-	// old input sys if we do decide to have it (most likely wont)...
 #endif
 
 
@@ -79,23 +61,11 @@ namespace StarterAssets
 			jump = newJumpState;
 		}
 
-		public void ShootInput(bool newShootState)
-		{
-			shoot = newShootState;
-		}
-
 		public void SprintInput(bool newSprintState)
 		{
 			sprint = newSprintState;
 		}
-
-		public void AimInput(bool newAimState)
-		{
-			aim = newAimState;
-		}
-
-#if !UNITY_IOS || !UNITY_ANDROID
-
+		
 		private void OnApplicationFocus(bool hasFocus)
 		{
 			SetCursorState(cursorLocked);
@@ -105,9 +75,6 @@ namespace StarterAssets
 		{
 			Cursor.lockState = newState ? CursorLockMode.Locked : CursorLockMode.None;
 		}
-
-#endif
-
 	}
 	
 }
