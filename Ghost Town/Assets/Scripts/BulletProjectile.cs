@@ -9,15 +9,15 @@ public class BulletProjectile : MonoBehaviour
       bulletRigidbody = GetComponent<Rigidbody>();
   }
   private void Start() {
-      float speed = 30f;
+      float speed = 0.5f;
       bulletRigidbody.velocity = transform.forward * speed;
  
      
   }
 
   public void OnTriggerEnter(Collider other){
-      if (other.GetComponent<BulletTarget>() !=null){
-          other.gameObject.GetComponent<EnemyHP> ().DoDamage (20);
+      if (other.GetComponent<CharacterStats>() !=null){
+          other.gameObject.GetComponent<CharacterStats> ().TakeDamage (10);
       } else{
           //hit something else
       }

@@ -8,6 +8,7 @@ public int currentHealth {get; private set;}
  public Stat damage;
  public Stat armor;
 public HealthBar healthBar;
+
 void Awake() {
     currentHealth = maxHealth;
     healthBar.SetMaxHealth(maxHealth);
@@ -35,5 +36,20 @@ public void TakeDamage (int damage)
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+
+    public void Heal (int damage)
+    {
+        
+        damage = Mathf.Clamp (damage, 0, int.MaxValue);
+        currentHealth += damage;
+         healthBar.SetHealth(currentHealth);
+         Debug.Log (transform.name + "heals for"+ damage);
+         if (currentHealth >100)
+         {
+            currentHealth = 100;
+          healthBar.SetHealth(currentHealth);
+         }
+    }
+
 }
 

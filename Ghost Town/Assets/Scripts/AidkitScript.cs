@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class AidkitScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+ private void OnTriggerEnter(Collider other){
+    other.gameObject.GetComponent<CharacterStats>().Heal(20);
+    destroyafteruse();
+ }
+ private void destroyafteruse(){
+    Destroy (gameObject);
+ }
 }
