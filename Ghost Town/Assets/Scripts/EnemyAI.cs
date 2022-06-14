@@ -18,6 +18,7 @@ public class EnemyAI : MonoBehaviour
   public GameObject Spawnpoint;
   
   public Animation anim;
+
 //Patroling
   public Vector3 walkPoint;
   bool walkPointSet;
