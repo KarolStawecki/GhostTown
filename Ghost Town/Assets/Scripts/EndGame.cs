@@ -15,7 +15,7 @@ public class EndGame : MonoBehaviour
       else
       {
         {
-      SceneManager.LoadScene(EndGame);
+      SceneManager.LoadScene("EndGame");
         }
       }
     }
