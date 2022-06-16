@@ -12262,7 +12262,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1000010252498714, guid: a967089208f523246bbb4911dd5cde5c, type: 3}
       propertyPath: m_Name
-      value: Enemy (Boss)
+      value: EnemyBoss
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010252498714, guid: a967089208f523246bbb4911dd5cde5c, type: 3}
+      propertyPath: m_TagString
+      value: Boss
       objectReference: {fileID: 0}
     - target: {fileID: 4000013314187654, guid: a967089208f523246bbb4911dd5cde5c, type: 3}
       propertyPath: m_RootOrder
@@ -78222,6 +78226,7 @@ GameObject:
   - component: {fileID: 5263192486647003363}
   - component: {fileID: 4512047785726923288}
   - component: {fileID: 4512047785726923289}
+  - component: {fileID: 4512047785726923290}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -78261,6 +78266,18 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4512047785726923290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4512047785726923287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f412678c35fd4b419f192e04feefd20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &4512047785726923291
 MonoBehaviour:
   m_ObjectHideFlags: 0
