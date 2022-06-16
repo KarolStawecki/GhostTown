@@ -8,7 +8,7 @@ public class MainMenu12 : MonoBehaviour
 
     public void PlayGame()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene("Ghost Town");
     }
 
     public void QuitGame()
